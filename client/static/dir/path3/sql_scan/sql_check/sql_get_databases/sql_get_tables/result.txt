@@ -1,0 +1,10 @@
+Database: szssh
+[8 tables]
+[*] admin        
+[*] fengcai      
+[*] home_slide   
+[*] links        
+[*] news         
+[*] options      
+[*] page_content 
+[*] video   

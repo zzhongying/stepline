@@ -1,0 +1,5 @@
+Database: szssh
+Table: admin
+[2 entries]
+[*] 4c62935b94d41df061e3f6262264934c          
+[*] f379eaf3c831b04de153469d1bec345e (666666) 

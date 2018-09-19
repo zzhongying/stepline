@@ -1,0 +1,10 @@
+Database: szssh
+Table: admin
+[7 columns]
+[*] Email       
+[*] id          
+[*] legal       
+[*] LogContent  
+[*] LoginNumber 
+[*] name        
+[*] password 
