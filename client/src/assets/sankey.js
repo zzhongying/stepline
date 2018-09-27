@@ -1,8 +1,4 @@
-export function sankey()
-{
-  console.log("asd")
-
-  d3.sankey = function() {
+d3.sankey = function() {
   var sankey = {},
       nodeWidth = 24,
       nodePadding = 8,
@@ -294,4 +290,3 @@ export function sankey()
 
   return sankey;
 };
-}

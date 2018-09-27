@@ -29,6 +29,13 @@ created(){
 beforeMount(){
 },
 mounted(){
+ // axios.get('http://127.0.0.1:5000/getMsg')
+ //  .then(function (response) {
+ //    console.log(response);
+ //  })
+ //  .catch(function (error) {
+ //    console.log(error);
+ //  });
 
 var that=this;
 function  getData() {
@@ -49,7 +56,7 @@ function  getData() {
    					ifdeng = true;
    				}
    			if(ifdeng ===false&&i+1<arrdata.length-1){
-   				if(arrdata[i+1].indexOf("result")<0&&arrdata[i+1].indexOf("D3JS")<0){
+   				if(arrdata[i+1].indexOf("result")<0&&arrdata[i+1].indexOf("chinaVis")<0){
    					arr5[x]={
    				  	name:arrdata[i+1]
    				  }
@@ -64,7 +71,8 @@ function  getData() {
 
    		return arr5;
    	}
-   function handlelinks(arrdata){//该函数设置source和target
+   	//该函数设置source和target
+   function handlelinks(arrdata){
    	var arr2  = new Array();
    	var arr3  = new Array();
    	var i = 0;
@@ -73,12 +81,14 @@ function  getData() {
    	var k =0;
    	while(i<arrdata.length)
    	{
-   		if(arrdata[i].indexOf("result")<0&&arrdata[i+1].indexOf("D3JS")>0){
+   		if(arrdata[i].indexOf("result")<0&&arrdata[i+1].indexOf("chinaVis")>0){
    			arr2[l++]=i;
    		}
    		i++;
    	}
 
+
+   	//桑基图source和target赋值
    	for(var i = 0;i<arrdata.length;i++){
    		for (var j = 0;j<arr2.length;j++) {
    			if(arr2[j]==i){
@@ -102,10 +112,10 @@ function  getData() {
    							//obj.source=arrdata[i]
 
    							 obj.source=arrdata[asda]
-   				            obj.target=arrdata[arr2[j+1]]
-   				            arr3[a]=obj
-   				            a++;
-   				            k++;
+                 obj.target=arrdata[arr2[j+1]]
+                 arr3[a]=obj
+                 a++;
+                 k++;
    						}
 
    				}
@@ -324,7 +334,7 @@ function  getData() {
    }
     // 对应 Python 提供的接口，这里的地址填写下面服务器运行的地址，
     const path = 'http://127.0.0.1:5000/getMsg';
-    axios.get(path,{params:{urls:"G:\\D3JS\\stepline\\client\\static\\dir"}}).then(res=>{
+    axios.get(path,{params:{urls:"E:\\chinaVis\\stepline\\client\\static\\dir"}}).then(res=>{
 
         var datato = res.data.split("\n");//按行分割字符串
         console.log(datato);
