@@ -1,0 +1,23 @@
+[+]    902 ---- open   220 VMware Authent
+[+]    445 ---- open   
+[+]    554 ---- open   
+[+]   3443 ---- open   
+[+]   2333 ---- open   HTTP/1.1 400 Inval
+[+]   4300 ---- open   
+[+]   6942 ---- open    (C:\Users\alienwa
+[+]   5357 ---- open   Service Unavailabl
+[+]   5951 ---- open   HTTP/1.1 400 Inval
+[+]   5939 ---- open   
+[+]   7790 ---- open            
+[+]   3213 ---- open   HTTP/1.1 400 BAD R
+[+]    912 ---- open   220 VMware Authent
+[+]   1082 ---- open   
+[+]   1025 ---- open   
+[+]    135 ---- open   
+[+]   2869 ---- open   HTTP/1.1 400 Bad R
+[+]   6691 ---- open   
+[+]   4301 ---- open   
+[+]   1026 ---- open   
+[+]   1027 ---- open   
+[+]   1028 ---- open   
+[+]   1036 ---- open   
