@@ -25,7 +25,7 @@ export default {
 
 
      /*height 修改 改 nodePadding*/
-    var margin = { top: 30, right: 10, bottom: 10, left: 50 },
+    var margin = { top: 30, right: 10, bottom: 10, left: 30 },
       width = 950 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
@@ -162,7 +162,7 @@ export default {
             //nsole.log(datapath[item][0]);
             var dom = d3.select("." + datapath[item]['0'] + "→" + datapath[item]['1']);
             console.log(dom);
-            dom.style("stroke-opacity", .5);
+            dom.style("stroke-opacity", .35);
           }
         })
         .append("title")
@@ -198,7 +198,7 @@ export default {
       arrowMarker.append("path")
         .attr("d", arrow_path)
         .attr("fill", "#fff")
-        .attr("opacity", 0.5);
+        .attr("opacity", 0.35);
 
 
       //添加链接
@@ -211,7 +211,7 @@ export default {
         .attr("marker-end", "url(#arrow)")
         .attr("d", path)
         .style("stroke-width", function(d) { return 5; }) //连线宽度
-        .style("strock-opacity",.5)
+        .style("strock-opacity",.35)
         .sort(function(a, b) { return b.dy - a.dy; });
 
 
@@ -230,7 +230,7 @@ export default {
               d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
             ) + "," + (
               d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
-            ) /1.05 + ")");
+            ) + ")");
           sankey.relayout();
           link.attr("d", path);
         }
@@ -305,7 +305,7 @@ export default {
               xi = d3.interpolateNumber(x0, x1),
               x2 = xi(curvature),
               x3 = xi(1 - curvature),
-              y0 = d.source.y + d.sy + d.dy+10,
+              y0 = d.source.y + d.sy + d.dy+10,    //桑基图source与target的link位置设置
               y1 = d.target.y + d.ty + d.dy+10;
             return "M" + x0 + "," + y0 +
               "C" + x2 + "," + y0 +
@@ -554,7 +554,7 @@ export default {
 <style scoped>
 .node rect {
   cursor: move;
-  fill-opacity: .5;
+  fill-opacity: .35;
   shape-rendering: crispEdges;
 }
 

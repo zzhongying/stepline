@@ -10,7 +10,6 @@
   import {mapGetters} from 'vuex'
   import * as d3 from 'd3v4'
 
-
   //  import  d3sankey from '../assets/sankey.js'
 
   export default {
