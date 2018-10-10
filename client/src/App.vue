@@ -5,8 +5,9 @@
   <ui ref="ui" ></ui>
         </div>
     <div id="main_view">
-      <Ping ref="Ping"  @nodeselect="nodeselect"></Ping>
-        <haddata ref="haddata" @nodeselect="nodeselect"></haddata>
+      <!--<Ping ref="Ping"  @nodeselect="nodeselect"></Ping>-->
+        <!--<haddata ref="haddata" @nodeselect="nodeselect">-->
+      <sankey></sankey>
     </div>
 
 
@@ -34,6 +35,7 @@
  import force from './components/force'
  import ui from './components/GUI'
  import sunburst from './components/sunburst'
+  import sankey from './components/sankey'
   export default {
     name: 'App',
     data(){
@@ -51,6 +53,7 @@
     haddata,
     Ping,
     lineS,
+      sankey
     },
     methods:{
 
@@ -72,9 +75,9 @@
        {
                 this.$refs.Ping.daga("run");
           }
-          else if (node=="dir_scan")
+          else if (node=="folder_scan")
            {
-                    this.$refs.sunburst.change("dir_scan");
+                    this.$refs.sunburst.change("folder_scan");
               }
     }
     },
