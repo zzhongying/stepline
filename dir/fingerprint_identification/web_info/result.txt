@@ -1,0 +1,9 @@
+DNS_server
+IP
+operating_system
+web_container
+web_database
+web_fingerprint
+web_language
+whois_domain_administrator
+whois_email
