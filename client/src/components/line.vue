@@ -2,7 +2,7 @@
   <div id="lineS">
   </div>
 </template>
-
+<!--下方echart-->
 <script>
   import * as d3 from 'd3v4'
   export default {
