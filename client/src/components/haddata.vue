@@ -334,7 +334,7 @@ function  getData() {
    }
     // 对应 Python 提供的接口，这里的地址填写下面服务器运行的地址，
     const path = 'http://127.0.0.1:5000/getMsg';
-    axios.get(path,{params:{urls:"E:\\chinaVis\\stepline\\client\\static\\dir"}}).then(res=>{
+    axios.get(path,{params:{urls:"E:\\chinaVis\\stepline10.24\\stepline\\client\\static\\dir"}}).then(res=>{
 
         var datato = res.data.split("\n");//按行分割字符串
         console.log(datato);

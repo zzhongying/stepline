@@ -1,6 +1,6 @@
 <template>
-  <div id="main_div">
-    <p style="color:#ccc;font-size:15px;font-family: sans-serif;font-weight: bolder;text-align: center">攻击流程视图</p>
+  <div id="chart">
+
   </div>
 </template>
 
@@ -10,31 +10,14 @@
   import {mapGetters} from 'vuex'
   import * as d3 from 'd3v4'
 
-  require('../assets/smartMenu.js')
-  require('../assets/smartMenu.css')
+
   //  import  d3sankey from '../assets/sankey.js'
 
   export default {
-    name: 'main_div',
-    data() {
-      return {
-        email_list: []//创建一些需要使用的对象或者数组
-      }
-    },
-    methods: {
-      choose(nodetype) {
-        this.$emit('nodeselect', nodetype);
-      },
-    },
+    name: 'chart',
+
       mounted() {
 
-        axios.get('http://127.0.0.1:5000/getMsg')
-          .then(function (response) {
-                 console.log(response);
-             })
-          .catch(function (error) {
-              console.log(error);
-        });
 
       }
     }

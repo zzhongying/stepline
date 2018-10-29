@@ -1,9 +1,0 @@
-http://www.senjumadara.com/admin.php
-http://www.senjumadara.com/source/plugin/myrepeats/table/table_myrepeats.php
-http://www.senjumadara.com/forum.php?mod=attachment&findpost=ss&aid=1
-http://www.senjumadara.com/home.php?mod=space&uid=4&do=profile
-http://www.senjumadara.com/install/include/install_lang.php
-http://www.senjumadara.com/source/plugin/myrepeats/table/table_myrepeats.php
-http://www.senjumadara.com/uc_server/control/admin/db.php
-http://www.senjumadara.com/source/include/misc/misc_ranklist_index.php
-http://www.senjumadara.com/source/module/forum/forum_attachment.php
