@@ -35,9 +35,7 @@ export default {
 
     var formatNumber = d3.format(",.0f"), // 小数点零点
       format = function(d) { return formatNumber(d) + " " + units; },
-      color = "#ADD8E6";
-
-
+      color = "#add8e6";
 
 
     // 添加画布
@@ -74,6 +72,28 @@ export default {
         .links(graph.links)
         .layout(32); //layout中的参数表示桑基布局用来优化流布局的时间。
 
+     //拖拽和点击的区分
+      function distinguish() {
+        var flag=0;
+
+       var element=xxxx;
+
+      element.addEventListener("mousedown",function () {
+        flag=0;
+      },false);
+      element.addEventListener("mousemove", function(){
+       flag = 1;
+      }, false);
+      element.addEventListener("mouseup", function(){
+        if(flag === 0){
+          alert("click");
+        }
+        else if(flag === 1){
+          alert("drag");
+        }
+      }, false);
+
+      }
 
 
       // 添加节点
@@ -84,12 +104,22 @@ export default {
         .attr("transform", function(d) {
           return "translate(" + d.x + "," + d.y +")";
         })
+
+       .on("click",function () {
+            alert("click")
+        })
+
         .call(d3.behavior.drag()
           .origin(function(d) { return d; })
           .on("dragstart", function() {
             this.parentNode.appendChild(this);
           })
-          .on("drag", dragmove));
+         .on("drag", dragmove))
+
+
+
+
+
 
      // var a = d3.rgb(175, 238, 238, .2); //左侧
       //var b = d3.rgb(76, 165, 246, .7); //右侧
@@ -147,6 +177,8 @@ export default {
 
         .attr("in", "SourceGraphic");
 
+
+
       // 为节点添加矩形
       node.append("rect")
         .attr("height", function(d) {  return d.dy; })
@@ -155,6 +187,7 @@ export default {
         //.attr("ry", "9px")
         //.style("fill", "url(#" + linearGradient.attr("id") + ")") //添加线性渐变
         .style("fill",function()  { return compute(Math.random()); })
+       // .style("opacity",.7)
         //.style("stroke","#CDC9C9")      //描边颜色设置
         .style("stroke-width", "1.5px")
         .style("filter", "url(#drop-shadow)") //添加阴影
@@ -164,9 +197,10 @@ export default {
           //console.log(data);
           for (var item in datapath) {
             var dom = d3.select("." + datapath[item]['0'] + "→" + datapath[item]['1']);
-            dom.style("stroke-opacity", 1) //节点高亮设置
+            dom.style("stroke-opacity", 1) //连线高亮设置
           }
         })
+
         .on("mouseout", function(d) {
           var name = d.name;
           var datapath = attackpath[name];
@@ -238,13 +272,16 @@ export default {
         .style("stroke-width", function(d) { return d.dy; }) //连线宽度
         .style("strock-opacity",.5)
         .sort(function(a, b) { return b.dy - a.dy; });
-
+        // .on("click",function (d) {
+        //   d3.selectAll(".link")
+        //     .style("stroke-width", function(d) { return d.dy/2; })
+        // });
 
       // 添加链接标题
       link.append("title")
         .text(function(d) {
           return d.source.name + "→" + d.target.name + "\n" + format(d.value);
-        });
+        })
 
 
       // 拖拽功能
@@ -260,6 +297,8 @@ export default {
           link.attr("d", path);
         }
       }
+
+
     });
 
   },
@@ -436,7 +475,7 @@ export default {
               return d.values;
             });
 
-          //
+
           initializeNodeDepth();
           resolveCollisions();
           for (var alpha = 1; iterations > 0; --iterations) {
@@ -586,7 +625,7 @@ export default {
 }
 
 #chart{
-  background:url("../assets/chart1300.png");
+  background:#020D1F;/*url("../assets/chart1300.png");*/
   background-size: 100% 100%; 
 }
 </style>

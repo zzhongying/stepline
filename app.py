@@ -27,35 +27,76 @@ def dirs_tree():
     stylenode = ['name']
 
     pathlink=[]
+    level_1=[]
+    level_2=[]
+    level_3=[]
+    level_4=[]
+    level_5=[]
+    Level=[]
 
+
+    #等级区分，nodes添加
     for root, dirs, files in os.walk((BASE_DIR + '/dir')):
         for dirpath in dirs:
             if dirpath!="dir":
-                #print(dirpath)
                 nodes.append(dict(name=dirpath))
                 tmp.append(dict(zip(style, [os.path.split(root)[1], dirpath, 1])))
-    
-    for root, dirs, files in os.walk((BASE_DIR + '/dir')):
-        for dirpath in dirs:
-           source=os.path.split(root)[1];
-           target=dirpath;
-           if source!='dir':
-                pathlink.append(dict(zip(style,[nodes.index({"name":source}),nodes.index({"name":target}),random.randint(1,5)])))
-    #print(pathlink)
 
-    for i in range(0, len(tmp)):
-        if tmp[i]['source'] != "dir":
-            links.append(tmp[i])
+            if dirpath[len(dirpath) - 1] == "1":
+                level_1.append(dirpath)
+            if dirpath[len(dirpath) - 1] == "2":
+                level_2.append(dirpath)
+            if dirpath[len(dirpath) - 1] == "3":
+                level_3.append(dirpath)
+            if dirpath[len(dirpath) - 1] == "4":
+                level_4.append(dirpath)
+            if dirpath[len(dirpath) - 1] == "5":
+                level_5.append(dirpath)
 
+
+    Level.append(level_1)
+    Level.append(level_2)
+    Level.append(level_3)
+    Level.append(level_4)
+    Level.append(level_5)
+
+    ttmp={}
+    tttmp=[]
+   # print(nodes)
+
+    for item in nodes:
+        if(item["name"][len(item["name"])-1].isdigit()):
+          # print(item["name"])
+           ttmp["name"]=item["name"]
+           #print(ttmp)
+           tttmp.append(ttmp)
+           ttmp={}
+
+
+
+    #去重
     seen=set()
     Nodes=[]
-    for d in nodes:
+    for d in tttmp:
         t=tuple(d.items())
         if t not in seen:
             seen.add(t)
             Nodes.append(d)
 
-    #print(Nodes)
+    # print(len(Nodes))
+    print(Nodes)
+
+    for root, dirs, files in os.walk((BASE_DIR + '/dir')):
+        for dirpath in dirs:
+            source = os.path.split(root)[1]
+            target = dirpath
+            if source != 'dir':
+                pathlink.append(dict(
+                    zip(style, [nodes.index({"name": source}), nodes.index({"name": target}), random.randint(1, 5)])))
+
+    for i in range(0, len(tmp)):
+        if tmp[i]['source'] != "dir":
+            links.append(tmp[i])
 
     #高亮的路径存储
     path = []
@@ -91,11 +132,9 @@ def dirs_tree():
             finallt[result] = lt
         else:
             finallt[result] = list
-    # finallt=dict(finallt);
 
-    print(pathlink)
 
-    return jsonify(pathlink, finallt,Nodes)
+    return jsonify(pathlink, finallt,Nodes,Level)
 
 
 if __name__ == '__main__':

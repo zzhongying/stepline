@@ -68,7 +68,7 @@ html {
 }
 
 body {
-  background-color: #101a3c;
+  background-color: #020D1F;
   height: 100%;
   width: 100%;
 }

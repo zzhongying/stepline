@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mask</title>
+</head>
+
+<body>
+
+<p id="main">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+// 添加画布
+var svg = d3.select("#main").append("svg")
+    .attr("width",400)
+    .attr("height", 300)
+    .append("g");
+
+  var mask=svg
+    .append("defs")
+    .append("mask")
+    .attr("id","small-rect");
+
+   mask.append("rect")
+    .attr("x",0)
+    .attr("y",0)
+    .attr("width",400)
+    .attr("height",300)
+    .attr("fill","black")
+    .attr("opacity",1);
+
+  mask.append("circle")
+    .attr("cx",150)
+    .attr("cy",150)
+    .attr("r",50)
+    .style("fill","white");
+
+
+   var front=svg.append("rect")
+    .attr("height",400)
+    .attr("width",300)
+    .attr("x",0)
+    .attr("y",0)
+    .style("fill","#d4fcff");
+
+   var black=svg.append("rect")
+    .attr("height",400)
+    .attr("width",300)
+    .attr("x","0")
+    .attr("y","0")
+     .attr("mask","url(#small-rect)")
+     .style("fill","#fcd3db")
+
+
+
+
+
+</script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mask</title>
+</head>
+
+<body>
+
+<p id="main">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+// 添加画布
+var svg = d3.select("#main").append("svg")
+    .attr("width","400")
+    .attr("height", "300")
+    .append("g");
+
+  var mask=svg
+    .append("defs")
+    .append("mask")
+    .attr("id","small-rect");
+
+   mask.append("rect")
+    .attr("x","0")
+    .attr("y","0")
+    .attr("width","400")
+    .attr("height","300")
+    .attr("fill","black")
+    .attr("opacity",1);
+
+  mask.append("circle")
+    .attr("cx","150")
+    .attr("cy","150")
+    .attr("r","50")
+    .style("fill","white");
+
+
+   var front=svg.append("rect")
+    .attr("height","400")
+    .attr("width","300")
+    .attr("x","0")
+    .attr("y","0")
+    .style("fill","#d4fcff");
+
+   var black=svg.append("rect")
+    .attr("height","400")
+    .attr("width","300")
+    .attr("x","0")
+    .attr("y","0")
+     .attr("mask","url(small-rect)")
+     .style("fill","#fcd3db")
+
+
+
+
+
+</script>
+</body>
+
+</html>
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>mask</title>#}
+{#</head>#}
+{#<style>#}
+{#  body {#}
+{#  background: #eeeeee;#}
+
+{##}
+{##holder {#}
+{#  position: relative;#}
+{#  width: 800px;#}
+{#  height: 500px;#}
+{#  overflow: hidden;#}
+
+{##}
+{#.image-back {#}
+{#  position: absolute;#}
+{#  top: 0;#}
+{#  right: 0;#}
+{#  left: 0;#}
+{#  bottom: 0;#}
+{#  z-index: 0;#}
+
+{#
+{#.mask {#}
+{#  position: relative;#}
+{#  z-index: 1;#}
+
+{##}
+{#.image-back img {#}
+{#  height: 100%;#}
+{#  width: auto;#}
+
+{##}
+{#</style>#}
+{#<body>#}
+{#<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
+{#<script src="http://d3js.org/d3.v3.min.js"></script>#}
+{#<div id="holder">#}
+{#  <div class="mask"></div>#}
+{##}
+{#  <div class="image-back"><img src="http://i.huffpost.com/gen/1979637/images/o-MOVING-HOUSE-facebook.jpg"></div>#}
+{#</div>#}
+{##}
+{#<script>#}
+{##}
+{#  var svgroot = d3.select(".mask").append("svg");#}
+{#  var mask = svgroot#}
+{#     .append("defs")#}
+{#     .append("mask")#}
+{#     .attr("id", "myMask");#}
+{##}
+{#  mask.append("rect")#}
+{#    .attr("x", 0)#}
+{#    .attr("y", 0)#}
+{#    .attr("width", 800)#}
+{#    .attr("height", 500)#}
+{#    .style("fill", "white")#}
+{#    .style("opacity", 0.7);#}
+{##}
+{#  mask.append("circle")#}
+{#    .attr("cx", 300)#}
+{#    .attr("cy", 300)#}
+{#    .attr("r", 150);#}
+{##}
+{#  var svg = svgroot#}
+{#    .attr("class", "series")#}
+{#    .attr("width", "800px")#}
+{#    .attr("height", "500px")#}
+{#    .append("g")#}
+{#    .attr("transform", "translate(0,0)")#}
+{##}
+{#  var rect = svg#}
+{#    .append("rect")#}
+{#    .attr("x", 0)#}
+{#    .attr("y", 0)#}
+{#    .attr("width", 800)#}
+{#    .attr("height", 500)#}
+{#    .attr("mask", "url(#myMask)")#}
+{#    .style("fill", "red");#}
+{##}
+{#  console.log("svg", svg)#}
+{##}
+{#</script>#}
+{#</body>#}
+{##}
+{#</html>#}
+{##}
+{##}
