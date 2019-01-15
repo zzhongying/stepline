@@ -18,8 +18,6 @@ def hello_world():
 
 @app.route('/getMsg/', methods=['GET', 'POST'])
 def dirs_tree():
-    #桑基图节点数据处理
-    str = ""
     tmp = []
     links = []
     nodes = []
@@ -33,6 +31,8 @@ def dirs_tree():
     level_4=[]
     level_5=[]
     Level=[]
+    collections=[]   #信息收集
+    attacks=[]       #攻击
 
 
     #等级区分，nodes添加
@@ -64,6 +64,7 @@ def dirs_tree():
     tttmp=[]
    # print(nodes)
 
+    #主文件夹区分
     for item in nodes:
         if(item["name"][len(item["name"])-1].isdigit()):
           # print(item["name"])
@@ -72,8 +73,6 @@ def dirs_tree():
            tttmp.append(ttmp)
            ttmp={}
 
-
-
     #去重
     seen=set()
     Nodes=[]
@@ -81,7 +80,13 @@ def dirs_tree():
         t=tuple(d.items())
         if t not in seen:
             seen.add(t)
-            Nodes.append(d)
+            if '@' in d['name']:
+                changed=d['name'].split('@')[1]
+                Nodes.append({'name':changed})
+                collections.append(changed)
+            else:
+                Nodes.append(d)
+                attacks.append(d['name'])
 
     # print(len(Nodes))
     print(Nodes)
@@ -90,19 +95,22 @@ def dirs_tree():
         for dirpath in dirs:
             source = os.path.split(root)[1]
             target = dirpath
-            if source != 'dir':
-                pathlink.append(dict(
-                    zip(style, [nodes.index({"name": source}), nodes.index({"name": target}), random.randint(1, 5)])))
+            sourcename = source
+            targetname = target
+            if '@' in source:
+                sourcename = source.split('@')[1]
+            if '@' in target:
+                targetname = target.split('@')[1]
+            if source != 'dir' and ({'name':sourcename} in Nodes) and ({'name':targetname} in Nodes) :
+                pathlink.append(dict(zip(style, [Nodes.index({"name": sourcename}), Nodes.index({"name": targetname}), dirpath[len(dirpath) - 1]
+])))
 
-    for i in range(0, len(tmp)):
-        if tmp[i]['source'] != "dir":
-            links.append(tmp[i])
 
     #高亮的路径存储
     path = []
     attackpath = []
     for root, dirs, files in os.walk((BASE_DIR + '/dir')):
-        if files == ['result.txt']:
+        if 'result.txt' in files:
             root = root.split('dir')
             if root[1] != ":":
                 path.append(root[1])
@@ -112,7 +120,10 @@ def dirs_tree():
         item = item.split('\\')
         for port in item:
             if port != "":
-                lt.append(port)
+                portname=port
+                if '@' in port:
+                    portname=port.split('@')[1]
+                lt.append(portname)
         attackpath.append(lt)
     # print(attackpath);
     finallt = dict()
@@ -134,7 +145,7 @@ def dirs_tree():
             finallt[result] = list
 
 
-    return jsonify(pathlink, finallt,Nodes,Level)
+    return jsonify(pathlink, finallt,Nodes,Level,collections,attacks)
 
 
 if __name__ == '__main__':

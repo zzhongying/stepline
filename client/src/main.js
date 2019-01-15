@@ -5,11 +5,13 @@ import App from './App'
 import router from './router'
 import echarts from 'echarts'
 import Vuex from 'vuex'
+import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/global.css'
 
 Vue.config.productionTip = false
+Vue.prototype.$axios =axios
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
@@ -130,6 +132,9 @@ Date.prototype.format = function(fmt) {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  data:{
+  	Bus: new Vue()
+  },
   router,
   store,
   components: { App },

@@ -1,12 +1,15 @@
 <template>
   <div id="app">
     <div id="Inf_view1">
-      <ui ref="ui"></ui>
+      <!--<ui ref="ui"></ui>-->
+      <control></control>
     </div>
     <div id="main_view">
-      <!--<Ping ref="Ping"  @nodeselect="nodeselect"></Ping>-->
-      <!--<haddata ref="haddata" @nodeselect="nodeselect">-->
       <sankey></sankey>
+    </div>
+    <div id="Inf_view2">
+    	<piechart></piechart>
+    	<whois></whois>
     </div>
   </div>
 </template>
@@ -18,6 +21,10 @@ import Ping from './components/Ping'
 import haddata from './components/haddata'
 import ui from './components/GUI'
 import sankey from './components/sankey'
+import control from './components/control'
+import piechart from './components/piechart'
+import logo from './components/logo'
+import whois from './components/whois'
 export default {
   name: 'App',
   data() {
@@ -29,7 +36,11 @@ export default {
     ui,
     haddata,
     Ping,
-    sankey
+    sankey,
+    control,
+    piechart,
+    logo,
+    whois
   },
   methods: {
 
@@ -87,19 +98,30 @@ body {
 }
 
 #main_view {
-  width: 90%;
+  width: 62%;
   height: 100%;
-  border: 1px solid #9A2EFE;
   float: left;
 }
 
-#Inf_view1 {
-  width: 10%;
+#Inf_view2{
+  width: 28%;
   height: 100%;
-  border: 1px solid #9A2EFE;
   float: left;
 }
 
+#Inf_view1{
+	width: 10%;
+	height: 100%;
+  float: left;
+}
+
+#whois{
+	height: 60%;
+}
+#piechart{
+	width: 100%;
+	height: 40%;
+}
 /*#sys_email{
   width: 100%;
   height: 100%;
