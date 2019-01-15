@@ -1,0 +1,6 @@
+Checking http://www.safedog.cn/
+Generic Detection results:
+The site http://www.safedog.cn/ seems to be behind a WAF or some sort of security solution
+Reason: The server header is different when an attack is detected.
+The server header for a normal response is "IIS", while the server header a response to an attack is "Safedog WAF.",
+Number of requests: 13

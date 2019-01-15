@@ -1,0 +1,15 @@
+Web指纹	UNIX，PHP/5.6.31，Apache/2.2.24，mod_dav，Drupal/8
+语言	PHP/5.6.31
+数据库	无
+Web容器	Apache/2.2.24
+服务器	无
+全球排名	无
+操作系统	Unix
+备案单位	达芙妮投资（集团）有限公司上海分公司 查看该单位其他域名
+邮箱	dnsadm@mail.daphne.com.cn 查看该邮箱其他域名
+域名所有者	达芙妮投资(集团)有限公司
+备案号	沪ICP备11031847号
+DNS	ns1.dns.com.cn,ns2.dns.com.cn
+域名注册商	北京新网互联科技有限公司
+IDC	北京市 世纪互联微软云Windows Azure数据中心
+IP	42.159.233.9 查看同IP域名 查看网段IP及域名

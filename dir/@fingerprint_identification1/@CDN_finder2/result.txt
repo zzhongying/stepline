@@ -1,0 +1,12 @@
+Results
+We believe the site http://www.youtube.com is using Google as a CDN.
+
+Count	Hostname	CDN
+35	i.ytimg.com	Google
+21	www.youtube.com	Google
+10	yt3.ggpht.com	Google
+4	s.ytimg.com	Google
+2	fonts.gstatic.com	Google
+1	pubads.g.doubleclick.net	Google
+1	secure.insightexpressai.com	Akamai
+1	accounts.google.com	Google

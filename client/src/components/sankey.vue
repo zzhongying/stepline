@@ -42,7 +42,7 @@
 					top: 50,
 					right: 10,
 					bottom: 10,
-					left: 100
+					left: 50
 				},
 				width = wid - margin.left - margin.right,
 				height = hei - margin.top - margin.bottom;

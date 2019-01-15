@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/JavaScript">
+        var browser={
+            versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {//移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        if((browser.versions.mobile || browser.versions.ios || browser.versions.android ||
+            browser.versions.iPhone || browser.versions.iPad) && window.outerWidth < 768){
+            window.location = "phone/wulinghaiwai.html";
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>屋瓴海外_屋瓴网_地产营销3.0时代引领者</title>
+    <meta name="keywords" content="地产互联网,地产电商,地产云电商,地产云系统,金牌经纪人,金牌顾问,屋瓴通,地产软件" />
+    <meta name="description" content="屋瓴海外置业是上海屋瓴（www.wuling.me）旗下，高端客户全球不动产配置中心，帮助中国大陆中产者进行海外资产配置，我们主要涉及欧美高端移民、大洋洲尊享移民，以及东南亚置业投资。屋瓴马来置业致力于成为中产阶级首次海外置业领域的领跑者，为有首次海外资产配置需求的客户提供最专业的指导和最贴心的服务。" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <link rel="shortcut icon" href="/apple-touch-icon-precomposed.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/kanfangtuan-temp.css" />
+</head>
+<body>
+<!--导航-->
+<header class="container-fluid header header--fixed hide-from-print animated">
+    <section class="row">
+        <article class="col-xs-4 header-photo">
+            <address class="header-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="" />
+                </a>
+            </address>
+            <h1>上海屋瓴网络科技有限公司</h1>
+        </article>
+        <article class="col-xs-8">
+            <address class="header-menu">
+                <h2>
+                    <a href="index.html">首页</a>
+                    <a href="about.html">了解屋瓴</a>
+                    <a class="active" href="http://www.ihaiwai.com/">屋瓴海外</a>
+                    <a href="download.html">下载中心</a>
+                    <a href="faq.html">常见问题</a>
+                    <a href="jobs.html">加入我们</a>
+                </h2>
+            </address>
+        </article>
+    </section>
+</header>
+
+<div class="banner">
+    <img src="./images/kanfangtuan/banner.jpg" alt="吉隆坡五天四夜掘金之旅">
+    <p><b>吉隆坡五天四夜掘金之旅</b><br>单人3800元，夫妻同行仅7000元，团期5月11日-15日</p>
+    <div class="btn-wrap">
+        <a  href="http://haiwai.wuling.me/" target="_blank">我要参团</a>
+    </div>
+</div>
+
+<!--内容 start-->
+<div class=" content">
+    <div class="title">
+        <h2>甄选项目</h2>
+        <p>永久产权世代传承  核心地段坐享尊贵</p>
+    </div>
+    <div class="project-box">
+        <div class="project-item">
+            <div class="img-box">
+                <img src="./images/kanfangtuan-temp/yaleju.jpg" alt="" >
+            </div>
+            <div class="info-box">
+                <h3>雅居乐</h3>
+                <div class="address">
+                    <i class="icon icon-gray-location"></i>
+                    <span>马来西亚 吉隆坡</span>
+                </div>
+                <p>中国企业在海外的良心作品之一，坐落于吉隆坡高档社区，承纳大马上流贵气。精心户型设计，挑高空间，暖心装饰，价格却十分感人。顶级学校费用不及国内30%，却能享更纯正国际教育。</p>
+                <div class="btn-wrap">
+                    <a class="btn-danger" href="http://v.youku.com/v_show/id_XMjcwNTk1ODI0NA==.html?spm=a2h3j.8428770.3416059.1" target="_blank">了解详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="img-box">
+                <img src="./images/kanfangtuan-temp/8-clony.jpg" alt="" >
+            </div>
+            <div class="info-box">
+                <h3>Yoo8 凯宾斯基品牌公寓</h3>
+                <div class="address">
+                    <i class="icon icon-gray-location"></i>
+                    <span>马来西亚 吉隆坡</span>
+                </div>
+                <p>由百年酒店管理运营商——凯宾斯基酒店打造，且全马仅此一家。繁华的地段、奢华的室内外装饰，精装交付，让您住在五星级的家中，随时随地奢享人生。</p>
+                <div class="btn-wrap">
+                    <a class="btn-danger" href="http://v.youku.com/v_show/id_XMjcwNjAzNzkyNA==.html?spm=a2h3j.8428770.3416059.1" target="_blank">了解详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="img-box">
+                <img src="./images/kanfangtuan-temp/star.jpg" alt="" >
+            </div>
+            <div class="info-box">
+                <h3>Star “星光大道”高级公寓</h3>
+                <div class="address">
+                    <i class="icon icon-gray-location"></i>
+                    <span>马来西亚 吉隆坡</span>
+                </div>
+                <p>与双子塔并肩，建成后将成为吉隆坡的新地标！5星米其林餐厅、杜莎夫人蜡像馆以及奢侈品旗舰店纷纷入驻。这里是不仅时尚的标志，更是尊贵的显现。</p>
+                <div class="btn-wrap">
+                    <a class="btn-danger" href="http://v.youku.com/v_show/id_XMjcwNjAzMzg1Mg==.html?spm=a2h3j.8428770.3416059.1#paction" target="_blank">了解详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="img-box">
+                <img src="./images/kanfangtuan-temp/stonor3.jpg" alt="" >
+            </div>
+            <div class="info-box">
+                <h3>史丹诺3号</h3>
+                <div class="address">
+                    <i class="icon icon-gray-location"></i>
+                    <span>马来西亚 吉隆坡</span>
+                </div>
+                <p>史丹诺3号坐落在繁华的“史丹诺”路中，与繁华的双子塔商业、商务区不足1千米的距离，和城中城公园相邻，着实为“闹中取静”的楷模。而与顶级名校仅一条马路的距离。</p>
+                <div class="btn-wrap">
+                    <a class="btn-primary" href="http://haiwai.wuling.me/" target="_blank">我要看房</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="img-box">
+                <img src="./images/kanfangtuan-temp/isola.jpg" alt="" >
+            </div>
+            <div class="info-box">
+                <h3>Isola “国企轩”高级公寓</h3>
+                <div class="address">
+                    <i class="icon icon-gray-location"></i>
+                    <span>马来西亚 吉隆坡</span>
+                </div>
+                <p>吉隆坡市中心目前最高住宅楼，超人性化设计，独特布局，均凸显其的高贵、不凡与稀缺。然而惊艳的项目却与亲民的价格紧紧联系在一起，是您居家、投资不可多得的项目，没有之一。</p>
+                <div class="btn-wrap">
+                    <a class="btn-primary" href="http://haiwai.wuling.me/" target="_blank">我要看房</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--内容 end-->
+
+<!--页底-->
+<footer>
+    <section class="footer-contact">
+        <article class="container">
+            <address class="row">
+                <div class="col-md-3 footer-contact-colmun">
+                    <div class="footer-icon">
+                        <img src="images/footer-menu-01.png" alt="联系我们" />
+                    </div>
+                    <div class="footer-contact-txt">
+                        <p>联系我们</p>
+                        <p>021-31660706</p>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-contact-colmun">
+                    <div class="footer-icon">
+                        <img src="images/footer-menu-02.png" alt="邮箱地址" />
+                    </div>
+                    <div class="footer-contact-txt">
+                        <p>邮箱地址</p>
+                        <p>biz@wulingd.com</p>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-contact-colmun" id="weixin">
+                    <div class="footer-icon">
+                        <img src="images/footer-menu-03.png" alt="微信洽谈" />
+                    </div>
+                    <div class="footer-contact-txt">
+                        <p>微信洽谈</p>
+                        <p>鼠标滑过，请用微信扫码</p>
+                    </div>
+                    <div class="footer-weixin" id="weixin-photo">
+                        <img src="images/weixin-kefu.png" alt="微信洽谈" />
+                    </div>
+                </div>
+                <div class="col-md-3 footer-contact-colmun">
+                    <div class="footer-icon">
+                        <img src="images/footer-menu-04.png" alt="公司地址" />
+                    </div>
+                    <div class="footer-contact-txt">
+                        <p>公司地址</p>
+                        <p>上海市静安区广中西路777号</p>
+                        <p>启迪大厦609室 邮编: 200070</p>
+                        <p>上海屋瓴网络科技有限公司</p>
+                    </div>
+                </div>
+            </address>
+        </article>
+    </section>
+    <section class="footer-edition">
+        <article class="container">
+            <address class="row">
+                <div class="col-md-12">
+                    <p>版权所有 © 2015-2018 上海屋瓴网络科技有限公司 沪ICP备15019222号-3</p>
+                </div>
+            </address>
+        </article>
+    </section>
+</footer>
+
+<script src="https://qiyukf.com/script/8d88f503893cd9d69d24bd8f741d8cce.js" defer async></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/headroom.js"></script>
+
+<script>
+    var myElement = document.querySelector("header");
+    var headroom = new Headroom(myElement, {
+        "tolerance": 15,
+        "offset": 200,
+        "classes": {
+            "initial": "animated",
+            "pinned": "slideDown",
+            "unpinned": "slideUp"
+        }
+    });
+    headroom.init();
+</script>
+</body>
+</html>

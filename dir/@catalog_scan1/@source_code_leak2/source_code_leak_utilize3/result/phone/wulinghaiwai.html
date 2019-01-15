@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/JavaScript">
+      adapt(750, 100);
+      function adapt(designWidth, rem2px){
+          var d = window.document.createElement('div');
+          d.style.width = '1rem';
+          d.style.display = "none";
+          var head = window.document.getElementsByTagName('head')[0];
+          head.appendChild(d);
+          var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
+          d.remove();
+          // document.documentElement.style.fontSize = window.innerWidth / designWidth * rem2px / defaultFontSize * 100 + '%';
+          var st = document.createElement('style');
+          st.setAttribute('id','htmlFs');
+          var portrait = "@media screen and (min-width: "+window.innerWidth+"px) {html{font-size:"+ ((window.innerWidth/(designWidth/rem2px)/defaultFontSize)*100) +"%!important;}}";
+          var landscape = "@media screen and (min-width: "+window.innerHeight+"px) {html{font-size:"+ ((window.innerHeight/(designWidth/rem2px)/defaultFontSize)*100) +"%!important;}}"
+          st.innerHTML = portrait + landscape;
+          head.appendChild(st);
+          return defaultFontSize
+      }
+      var browser={
+          versions:function(){
+              var u = navigator.userAgent, app = navigator.appVersion;
+              return {//移动终端浏览器版本信息
+                  trident: u.indexOf('Trident') > -1, //IE内核
+                  presto: u.indexOf('Presto') > -1, //opera内核
+                  webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                  gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                  mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                  ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                  android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                  iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                  iPad: u.indexOf('iPad') > -1, //是否iPad
+                  webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+              };
+          }(),
+          language:(navigator.browserLanguage || navigator.language).toLowerCase()
+      };
+
+      if( window.outerWidth < 768 && (browser.versions.mobile || browser.versions.ios || browser.versions.android ||
+          browser.versions.iPhone || browser.versions.iPad)){
+//        window.location = "phone/kanfangtuan.html";
+          console.log("web")
+      }else {
+
+          window.location = "/wulinghaiwai.html";
+      }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no" />
+  <title>屋瓴海外_屋瓴网_地产营销3.0时代引领者</title>
+  <meta name="keywords" content="了解屋瓴,关于屋瓴,地产外场,金牌经纪人,金牌顾问,屋瓴通,地产软件" />
+  <meta name="description" content="屋瓴云商系统解决传统地产代理销售中存在的5大问题，通过9大产品，将客户来源最高提升至53%。" />
+  <script src="js/htmlSize.js"></script>
+  <link rel="stylesheet" href="css/mui.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/kanfangtuan-temp.css" />
+  <link rel="stylesheet" href="./css/nativeShare.css"/></head>
+<body>
+<!--头部-->
+<section class="nav">
+  <article class="navContent">
+    <address class="nav-logo">
+      <a class="index.html">
+        <img src="images/logo.png" alt="屋瓴网_地产营销3.0时代引领者" />
+      </a>
+    </address>
+    <address class="nav-menu">
+      <a class="display-flex flex-direction" href="#topPopover"><i>&nbsp;</i></a>
+    </address>
+  </article>
+</section>
+
+<!--导航-->
+<section id="topPopover" class="mui-popover">
+  <article class="mui-scroll-wrapper">
+    <address class="mui-scroll">
+      <div class="menu-main">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">了解屋瓴</a></li>
+          <li><a class="active" href="http://www.ihaiwai.com/">屋瓴海外</a></li>
+          <li><a href="download.html">下载中心</a></li>
+          <li><a href="faq.html">常见问题</a></li>
+          <li><a href="jobs.html">加入我们</a></li>
+        </ul>
+      </div>
+    </address>
+  </article>
+</section>
+
+<div class="banner">
+  <img src="./images/kanfangtuan/banner.jpg" alt="吉隆坡五天四夜掘金之旅">
+  <p><b>吉隆坡五天四夜掘金之旅</b><br>单人3800元<br>夫妻同行仅7000元</p>
+  <div class="btn-wrap">
+    <a  href="http://haiwai.wuling.me/" target="_blank">我要参团</a>
+  </div>
+</div>
+
+<!--内容 start-->
+<div class=" content">
+  <div class="title">
+    <h2>甄选项目</h2>
+    <p>永久产权世代传承  核心地段坐享尊贵</p>
+  </div>
+  <div class="project-box">
+    <div class="project-item">
+      <div class="img-box">
+        <img src="../images/kanfangtuan-temp/yaleju.jpg" alt="雅居乐" >
+      </div>
+      <div class="info-box">
+        <h3>雅居乐</h3>
+        <div class="address">
+          <i class="icon icon-gray-location"></i>
+          <span>马来西亚 吉隆坡</span>
+        </div>
+        <p>中国企业在海外的良心作品之一，坐落于吉隆坡高档社区，承纳大马上流贵气。精心户型设计，挑高空间，暖心装饰，价格却十分感人。顶级学校费用不及国内30%，却能享更纯正国际教育。</p>
+        <div class="btn-wrap">
+          <a class="btn-danger" href="http://m.youku.com/video/id_XMjcwNTk1ODI0NA==.html?from=s7.8-1.2&spm=a2h0k.8191393.bodydiv.5!2~5!4~A" target="_blank">了解详情</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="img-box">
+        <img src="../images/kanfangtuan-temp/8-clony.jpg" alt="8 Clony" >
+      </div>
+      <div class="info-box">
+        <h3>Yoo8 凯宾斯基品牌公寓</h3>
+        <div class="address">
+          <i class="icon icon-gray-location"></i>
+          <span>马来西亚 吉隆坡</span>
+        </div>
+        <p>由百年酒店管理运营商——凯宾斯基酒店打造，且全马仅此一家。繁华的地段、奢华的室内外装饰，精装交付，让您住在五星级的家中，随时随地奢享人生。</p>
+        <div class="btn-wrap">
+          <a class="btn-danger" href="http://m.youku.com/video/id_XMjcwNjAzNzkyNA==.html?from=s7.8-1.2&spm=a2h0k.8191393.bodydiv.5!2~5!4~A" target="_blank">了解详情</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="img-box">
+        <img src="../images/kanfangtuan-temp/star.jpg" alt="Star" >
+      </div>
+      <div class="info-box">
+        <h3>Star “星光大道”高级公寓</h3>
+        <div class="address">
+          <i class="icon icon-gray-location"></i>
+          <span>马来西亚 吉隆坡</span>
+        </div>
+        <p>与双子塔并肩，建成后将成为吉隆坡的新地标！5星米其林餐厅、杜莎夫人蜡像馆以及奢侈品旗舰店纷纷入驻。这里是不仅时尚的标志，更是尊贵的显现。</p>
+        <div class="btn-wrap">
+          <a class="btn-danger" href="http://m.youku.com/video/id_XMjcwNjAzMzg1Mg==.html?from=s7.8-1.2&spm=a2h0k.8191393.bodydiv.5!2~5!4~A" target="_blank">了解详情</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="img-box">
+        <img src="../images/kanfangtuan-temp/stonor3.jpg" alt="Stonor3" >
+      </div>
+      <div class="info-box">
+        <h3>史丹诺3号</h3>
+        <div class="address">
+          <i class="icon icon-gray-location"></i>
+          <span>马来西亚 吉隆坡</span>
+        </div>
+        <p>史丹诺3号坐落在繁华的“史丹诺”路中，与繁华的双子塔商业、商务区不足1千米的距离，和城中城公园相邻，着实为“闹中取静”的楷模。而与顶级名校仅一条马路的距离。</p>
+        <div class="btn-wrap">
+          <a class="btn-primary" href="http://haiwai.wuling.me/" target="_blank">我要看房</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="img-box">
+        <img src="../images/kanfangtuan-temp/isola.jpg" alt="Isola" >
+      </div>
+      <div class="info-box">
+        <h3>Isola “国企轩”高级公寓</h3>
+        <div class="address">
+          <i class="icon icon-gray-location"></i>
+          <span>马来西亚 吉隆坡</span>
+        </div>
+        <p>吉隆坡市中心目前最高住宅楼，超人性化设计，独特布局，均凸显其的高贵、不凡与稀缺。然而惊艳的项目却与亲民的价格紧紧联系在一起，是您居家、投资不可多得的项目，没有之一。</p>
+        <div class="btn-wrap">
+          <a class="btn-primary" href="http://haiwai.wuling.me/" target="_blank">我要看房</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--内容 end-->
+<!--页底-->
+<footer class="footer">
+  <section class="footer-menu">
+    <ul>
+      <li class="display-flex v-layout">
+        <div class="footer-menu-ico">
+          <img src="images/footer-menu-01.png" alt="" />
+        </div>
+        <div class="flex-average footer-menu-txt">
+          <dl>
+            <dt>联系我们</dt>
+            <dd><a href="tel:02131660706">021-31660706</a></dd>
+          </dl>
+        </div>
+      </li>
+      <li class="display-flex v-layout">
+        <div class="footer-menu-ico">
+          <img src="images/footer-menu-02.png" alt="邮箱地址" />
+        </div>
+        <div class="flex-average footer-menu-txt">
+          <dl>
+            <dt>邮箱地址</dt>
+            <dd><a href="mailto:biz@wulingd.com">biz@wulingd.com</a></dd>
+          </dl>
+        </div>
+      </li>
+      <li class="display-flex v-layout">
+        <div class="footer-menu-ico">
+          <img src="images/footer-menu-03.png" alt="微信洽谈" />
+        </div>
+        <div class="flex-average footer-menu-txt">
+          <dl>
+            <dt>微信洽谈</dt>
+            <dd>长按二维码图片进行微信聊天</dd>
+          </dl>
+        </div>
+        <div class="footer-men-code">
+          <img src="images/footer-weixin.png" alt="" />
+        </div>
+      </li>
+      <li class="display-flex v-layout address">
+        <div class="footer-menu-ico">
+          <img src="images/footer-menu-04.png" alt="公司地址" />
+        </div>
+        <div class="flex-average footer-menu-txt">
+          <dl>
+            <dt>公司地址</dt>
+            <dd>上海市静安区广中西路777号启迪大厦609室 邮编: 200070  上海屋瓴网络科技有限公司</dd>
+          </dl>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="footer-copyright">
+    <p>版权所有 © 2015-2018 上海屋瓴网络科技有限公司 </p>
+    <p><a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15019222号-3</a></p>
+  </section>
+</footer>
+<script src="js/mui.min.js"></script>
+<!--<script src="../js/jquery.min.js"></script>-->
+
+</body>
+</html>
