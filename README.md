@@ -18,9 +18,12 @@
   - c)通过时序轴和安全事件分析**回溯**，对网络攻击进行**分析、预测**
   
 ## 3:系统概览
-![系统概览](https://github.com/zzhongying/stepline/blob/master/%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%A7%88.png)
+![系统概览](https://github.com/zzhongying/stepline/blob/fdad04541ca738685768f8ff3d037f9b9cd420a0/image/%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%A7%88.png)
+
 
 ## 4:模块介绍
+![模块1](https://github.com/zzhongying/stepline/blob/fdad04541ca738685768f8ff3d037f9b9cd420a0/image/%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D.png)
+![模块2](https://github.com/zzhongying/stepline/blob/fdad04541ca738685768f8ff3d037f9b9cd420a0/image/%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D2.png)
 
 
 
