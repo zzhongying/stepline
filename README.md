@@ -18,7 +18,8 @@
   - c)通过时序轴和安全事件分析**回溯**，对网络攻击进行**分析、预测**
   
 ## 3:系统概览
-<img src="D:\照片\系统概览.png" alt="系统概览" style="zoom:80%">
+![系统概览](https://github.com/zzhongying/stepline/blob/master/%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%A7%88.png)
+
 
 
 
